@@ -1,0 +1,21 @@
+.search-head {
+  width: 100vw;
+  min-width: 1100px;
+
+  background-image: url("../../assets/images/keyboard.jpg");
+  background-repeat: no-repeat;
+
+  background-size: max(100vw, 1100px);
+}
+
+#search-results {
+  margin-top: 92px;
+}
+
+.trainers-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  margin-bottom: 72px;
+}

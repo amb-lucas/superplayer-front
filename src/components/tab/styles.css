@@ -1,0 +1,9 @@
+.tab {
+  background-color: var(--background-tabs);
+  border-radius: 24px;
+  padding: 24px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}

@@ -1,0 +1,118 @@
+.head {
+  width: 100vw;
+  min-width: 1100px;
+
+  background-image: url("../../assets/images/joystick.jpg");
+  background-repeat: no-repeat;
+
+  background-size: max(100vw, 1100px);
+}
+
+.title {
+  font-size: 96px;
+  color: var(--text-active);
+  text-transform: uppercase;
+
+  width: 1100px;
+  padding-top: 128px;
+}
+
+.search-bar {
+  padding-top: 108px;
+}
+
+.search-bar input {
+  font-size: 30px;
+
+  width: 480px;
+  padding: 12px 30px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  margin-right: 36px;
+}
+
+.search-bar button {
+  font-size: 30px;
+  font-weight: 700;
+
+  color: var(--text-active);
+  background-color: var(--cta);
+
+  padding: 12px 30px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  transition: 0.2s;
+  opacity: 1;
+}
+
+.search-bar button:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.join-us {
+  padding-top: 80px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-active);
+  margin-bottom: 64px;
+}
+
+.join-us p:first-of-type {
+  padding-bottom: 12px;
+}
+
+.join-us a {
+  text-decoration: none;
+  color: var(--text-active);
+}
+
+#who-are-we {
+  margin-top: 96px;
+}
+#who-are-we p {
+  font-size: 24px;
+  color: var(--text-active);
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.icons-col {
+  width: 264px;
+  height: 264px;
+  align-items: center;
+  text-align: center;
+}
+.icons-col:first-of-type {
+  margin-left: 48px;
+}
+.icons-col:last-of-type {
+  margin-right: 48px;
+}
+.icons-col img {
+  margin-bottom: 24px;
+}
+.icons-col:first-of-type img {
+  margin-top: 42px;
+  margin-bottom: 48px;
+}
+.icons-col h3 {
+  font-size: 30px;
+  color: var(--text-active);
+  font-weight: 300;
+}
+
+.icons-expl {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+.icons-expl p {
+  width: 480px;
+}

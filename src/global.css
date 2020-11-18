@@ -1,0 +1,65 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.robot-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.rakkas {
+  font-family: "Rakkas", cursive;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  --background-navbar: #222222;
+  --background-page: #333333;
+  --background-tabs: #454545;
+  --background-inactive-input: #e0e0e0;
+  --background-input: #f9f9f9;
+
+  --text-inactive: #acacac;
+  --text-seconday: #e7e7e7;
+  --text-active: #f6f6f6;
+  --text-input: #4f4f4f;
+
+  --error: #ee304f;
+  --rating: #ffd700;
+  --cta: #70d670;
+  --slider: #acacac;
+
+  --blue-one: #2f80ed;
+  --blue-two: #2d9cdb;
+  --blue-three: #56ccf2;
+
+  --purple: #9b51e0;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 1100px;
+  background-color: var(--background-page);
+}
+
+.page-inside {
+  min-height: calc(100vh - 54px - 54px);
+
+  width: 1100px;
+  margin: 0 auto;
+}

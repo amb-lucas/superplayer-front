@@ -1,0 +1,33 @@
+footer {
+  width: 100vw;
+  min-width: 1100px;
+}
+
+.sp-footer {
+  background-color: var(--background-navbar);
+}
+
+.footer-inside {
+  width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.footer-inside p {
+  display: inline-block;
+}
+
+.footer-primary {
+  font-family: "Rakkas", cursive;
+  font-size: 36px;
+  color: var(--text-active);
+}
+
+.footer-secondary {
+  font-size: 24px;
+  color: var(--text-inactive);
+}

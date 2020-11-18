@@ -1,0 +1,59 @@
+.trainer-card {
+  border-radius: 24px;
+  background-color: var(--background-tabs);
+  width: 300px;
+
+  padding: 24px;
+
+  margin-bottom: 16px;
+}
+
+.trainer-card img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.card-text h2 {
+  color: var(--text-active);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.card-text h3 {
+  color: var(--text-active);
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+.card-text p {
+  color: var(--text-active);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.trainer-card button {
+  margin-top: 18px;
+
+  padding: 6px 24px;
+  background-color: var(--text-active);
+
+  outline: none;
+  border-radius: 24px;
+  border-color: var(--cta);
+  border-width: 3px;
+  border-style: solid;
+
+  color: var(--background-tabs);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.trainer-card button:hover {
+  cursor: pointer;
+}

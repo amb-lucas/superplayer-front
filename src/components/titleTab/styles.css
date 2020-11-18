@@ -1,0 +1,15 @@
+.title-tab {
+  display: inline-block;
+  background-color: var(--cta);
+  padding: 6px 24px 6px 24px;
+  border-radius: 0 28px 28px 0;
+  margin-bottom: 32px;
+
+  position: relative;
+  left: calc(-50vw + 550px);
+  padding-left: calc(50vw - 550px);
+}
+.title-tab h2 {
+  font-size: 36px;
+  color: var(--text-active);
+}

@@ -1,0 +1,37 @@
+.player-tab {
+  background-color: var(--background-tabs);
+  border-radius: 24px;
+  padding: 24px 32px;
+
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.player-tab-cell {
+  color: var(--text-active);
+  display: inline-block;
+}
+
+.player-tab-cell h1 {
+  font-size: 36px;
+  font-weight: 400;
+  padding-bottom: 12px;
+}
+
+.player-tab-cell p {
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.player-tab-cell img {
+  border-radius: 50%;
+  height: 264px;
+  width: 264px;
+}
+.player-tab-cell .right-img {
+  margin-left: 24px;
+}
+.player-tab-cell .left-img {
+  margin-right: 24px;
+}
