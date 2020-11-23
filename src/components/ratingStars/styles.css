@@ -1,0 +1,7 @@
+.rating-stars .active {
+  color: var(--rating);
+}
+
+.rating-stars .inactive {
+  color: var(--background-tabs);
+}

@@ -1,0 +1,29 @@
+.class-box {
+  background-color: var(--text-active);
+  padding: 24px;
+  width: 300px;
+  height: 140px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.class-box h3 {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.class-box h2 {
+  font-size: 32px;
+}
+
+.two-items h3 {
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+.three-items h3:first-of-type {
+  margin-top: 12px;
+}
+.three-items h2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

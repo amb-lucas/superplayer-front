@@ -1,0 +1,18 @@
+.comment-box {
+  background-color: var(--background-tabs);
+  padding: 18px 24px;
+  border-radius: 24px;
+  margin-bottom: 18px;
+}
+.comment-box:last-of-type {
+  margin-bottom: 0;
+}
+
+.comment-box p {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.comment-box span {
+  color: var(--text-inactive);
+  font-style: italic;
+}

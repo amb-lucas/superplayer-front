@@ -5,10 +5,19 @@ import Tab from "../tab";
 import "./styles.css";
 
 const PlayerTab = ({ name, photo, description, photoPosition = "left" }) => {
+  const descriptionHTML = description.split("\n").map((item, idx) => {
+    return (
+      <span key={`desc-${idx}`}>
+        {item}
+        <br />
+      </span>
+    );
+  });
+
   const playerDetails = (
     <div className="player-tab-cell">
       <h1>{name}</h1>
-      <p>{description}</p>
+      <p>{descriptionHTML}</p>
     </div>
   );
 
