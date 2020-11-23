@@ -6,12 +6,7 @@ import "./styles.css";
 
 const PlayerTab = ({ name, photo, description, photoPosition = "left" }) => {
   const descriptionHTML = description.split("\n").map((item, idx) => {
-    return (
-      <span key={`desc-${idx}`}>
-        {item}
-        <br />
-      </span>
-    );
+    return <span key={`desc-${idx}`}>{item}</span>;
   });
 
   const playerDetails = (

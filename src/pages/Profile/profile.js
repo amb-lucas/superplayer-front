@@ -17,18 +17,16 @@ const ProfilePage = ({
 }) => {
   const introText = intro.split("\n").map((text, idx) => {
     return (
-      <span key={`intro-${idx}`}>
+      <span className="multiline-text" key={`intro-${idx}`}>
         {text}
-        <br />
       </span>
     );
   });
 
   const trainText = train.split("\n").map((text, idx) => {
     return (
-      <span key={`train-${idx}`}>
+      <span className="multiline-text" key={`train-${idx}`}>
         {text}
-        <br />
       </span>
     );
   });

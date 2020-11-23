@@ -57,9 +57,17 @@
   background-color: var(--background-tabs);
 }
 .profile-summary-intro {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--text-active);
-  line-height: 30px;
+  line-height: 28px;
+}
+
+.multiline-text {
+  display: block;
+  margin-bottom: 12px;
+}
+.profile-summary-intro .multiline-text:last-of-type {
+  margin-bottom: 0;
 }
 
 #class-details {
@@ -166,11 +174,12 @@
 }
 #end-of-page-cta .white-box button:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 #end-of-page-cta .white-box:first-of-type button {
   background-color: var(--cta);
   color: var(--text-active);
 }
 #end-of-page-cta .white-box:last-of-type button {
-  color: var(--text-input);
+  color: var(--cta);
 }
