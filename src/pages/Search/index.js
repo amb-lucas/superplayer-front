@@ -1,112 +1,91 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-import TitleTab from "../../components/titleTab";
-import TrainerCard from "../../components/trainerCard";
+import Api from "../../services/api";
 
-import "./styles.css";
+import SearchPage from "./search";
 
-function SearchPage(props) {
-  const [searchInput, setSearchInput] = useState("");
+const queryResponseSample = {
+  total: 2,
+  trainers: [
+    {
+      name: "Yodami",
+      title: "Coach de League of Legends",
+      photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
+      description: "League of Legends Jungle, para todos os níveis",
+      id: "1",
+    },
+    {
+      name: "Zilde Souto",
+      title: "Jungle da UFPE Virtus",
+      photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
+      description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
+      id: "2",
+    },
+    {
+      name: "Yodami",
+      title: "Coach de League of Legends",
+      photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
+      description: "League of Legends Jungle, para todos os níveis",
+      id: "3",
+    },
+    {
+      name: "Zilde Souto",
+      title: "Jungle da UFPE Virtus",
+      photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
+      description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
+      id: "4",
+    },
+  ],
+};
+
+const SearchIndex = (props) => {
   const [queryValue, setQueryValue] = useState(
-    props.match.params.query ? props.match.params.query : ""
+    props.location === ""
+      ? ""
+      : props.location.search.split("term=")[1].split("=")[0]
   );
 
-  const handleChangeInput = (value) => {
-    setSearchInput(value);
+  const [queryResponse, setQueryResponse] = useState(queryResponseSample);
+  const makeQuery = async (query) => {
+    Api.get("search", {
+      params: { term: query },
+    }).then((res) => {
+      const responseData = res.data.searchAns;
+
+      console.log(responseData);
+
+      setQueryResponse({
+        total: responseData.length,
+        trainers: responseData.map(({ name, role, classTitle, user }) => {
+          return {
+            name,
+            role,
+            photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
+            classTitle,
+            id: user,
+          };
+        }),
+      });
+
+      history.push(`/search?term=${query}`);
+    });
   };
 
-  const handleClickSearch = () => {
-    setQueryValue(searchInput);
-    // remake query
-  };
-
-  const queryResponseSample = {
-    total: 2,
-    trainers: [
-      {
-        name: "Yodami",
-        title: "Coach de League of Legends",
-        photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-        description: "League of Legends Jungle, para todos os níveis",
-        id: "1",
-      },
-      {
-        name: "Zilde Souto",
-        title: "Jungle da UFPE Virtus",
-        photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-        description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
-        id: "2",
-      },
-      {
-        name: "Yodami",
-        title: "Coach de League of Legends",
-        photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-        description: "League of Legends Jungle, para todos os níveis",
-        id: "3",
-      },
-      {
-        name: "Zilde Souto",
-        title: "Jungle da UFPE Virtus",
-        photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-        description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
-        id: "4",
-      },
-      {
-        name: "Yodami",
-        title: "Coach de League of Legends",
-        photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-        description: "League of Legends Jungle, para todos os níveis",
-        id: "5",
-      },
-      {
-        name: "Zilde Souto",
-        title: "Jungle da UFPE Virtus",
-        photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-        description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
-        id: "6",
-      },
-    ],
+  const history = useHistory();
+  const handleNewQuery = (query) => {
+    setQueryValue(query);
+    history.push(`/search?term=${query}`);
+    makeQuery(query);
   };
 
   return (
-    <div className="search-head">
-      <div className="page-inside">
-        <div className="top-home">
-          <h1 className="title">Treine com os melhores</h1>
-
-          <div className="search-bar">
-            <input
-              onChange={(e) => handleChangeInput(e.target.value)}
-              className="search-game-input"
-              placeholder="Insira nome do jogo"
-            />
-            <button onClick={handleClickSearch}>Buscar Treinadores</button>
-          </div>
-        </div>
-
-        <div id="search-results">
-          <TitleTab title="eTrainers encontrados" />
-
-          <div className="trainers-list">
-            {queryResponseSample.trainers.map(
-              ({ name, photo, title, description, id }, i) => {
-                return (
-                  <TrainerCard
-                    key={`trainer-${i}`}
-                    name={name}
-                    title={title}
-                    photo={photo}
-                    description={description}
-                    id={id}
-                  />
-                );
-              }
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+    <SearchPage
+      queryValue={queryValue}
+      handleNewQuery={handleNewQuery}
+      queryResponse={queryResponse}
+    />
   );
-}
+};
 
-export default SearchPage;
+export default SearchIndex;

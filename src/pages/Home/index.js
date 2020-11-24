@@ -20,7 +20,7 @@ const HomePage = () => {
 
   const history = useHistory();
   const handleClickSearch = () => {
-    history.push(`/search/${searchInput}`);
+    history.push(`/search?term=${searchInput}`);
   };
 
   const eTrainersSamples = [

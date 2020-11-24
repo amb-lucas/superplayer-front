@@ -8,7 +8,8 @@ import Footer from "./components/footer";
 
 import HomePage from "./pages/Home";
 import ProfilePageIndex from "./pages/Profile";
-import SearchPage from "./pages/Search";
+import SearchPageIndex from "./pages/Search";
+import RegisterPageIndex from "./pages/Register";
 
 const Routes = () => {
   return (
@@ -18,8 +19,8 @@ const Routes = () => {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/profile" component={ProfilePageIndex} />
-          <Route path="/search/:query" component={SearchPage} />
-          <Route path="/search" component={SearchPage} />
+          <Route path="/search" component={SearchPageIndex} />
+          <Route path="/register" component={RegisterPageIndex} />
         </Switch>
         <Footer />
       </ScrollToTop>

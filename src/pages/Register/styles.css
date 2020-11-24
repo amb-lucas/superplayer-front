@@ -1,0 +1,71 @@
+.register-form {
+  margin-top: 48px;
+  background-color: var(--background-tabs);
+  padding: 24px 36px;
+  border-radius: 24px;
+}
+
+.register-form fieldset {
+  border-radius: 24px;
+  border-width: 3px;
+  border-style: solid;
+  padding: 24px;
+}
+
+.register-form legend {
+  font-size: 36px;
+  color: var(--text-active);
+}
+
+.register-form label {
+  font-size: 24px;
+  color: var(--text-active);
+}
+
+.register-form input {
+  font-size: 30px;
+
+  width: 480px;
+  padding: 12px 30px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  margin-top: 6px;
+  margin-right: 36px;
+  margin-bottom: 30px;
+}
+
+.register-form input[type="checkbox"] {
+  height: 24px;
+  width: 24px;
+
+  margin: 0 12px 0 0;
+  border-radius: 50%;
+}
+
+#about-me {
+  display: flex;
+  justify-content: space-between;
+}
+
+#about-me div:last-of-type {
+  text-align: center;
+}
+
+.register-form button {
+  margin-top: 24px;
+  padding: 18px 32px;
+  background-color: var(--cta);
+  color: var(--text-active);
+  font-size: 32px;
+  font-weight: 700;
+  border-width: 0;
+  border-radius: 24px;
+  transition: 0.2s;
+}
+.register-form button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

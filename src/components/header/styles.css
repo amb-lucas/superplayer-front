@@ -21,6 +21,10 @@ header {
   display: inline-block;
 }
 
+.header-inside div p:last-of-type {
+  margin-left: 16px;
+}
+
 .header-primary {
   font-family: "Rakkas", cursive;
   font-size: 36px;

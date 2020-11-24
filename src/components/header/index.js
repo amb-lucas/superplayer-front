@@ -10,7 +10,15 @@ const Header = () => {
         <Link to="/">
           <p className="header-primary">SuperPlayer</p>
         </Link>
-        <p className="header-secondary">Cadastre-se</p>
+
+        <div>
+          <Link to="/login">
+            <p className="header-secondary">Entrar</p>
+          </Link>
+          <Link to="/register">
+            <p className="header-secondary">Cadastre-se</p>
+          </Link>
+        </div>
       </div>
     </header>
   );

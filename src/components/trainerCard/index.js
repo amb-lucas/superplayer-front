@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Image from "../../components/imageRenderer";
+
 import "./styles.css";
 
-const trainerCard = ({ name, photo, title, description, id }) => {
+const trainerCard = ({ name, photo, role, classTitle, id }) => {
   return (
     <div className="trainer-card">
-      <img src={photo} alt={`${name}-profile-picture`} />
+      <Image imageData={photo} alt={`${name}-profile-picture`} />
       <div className="card-text">
         <h2>{name}</h2>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3>{role}</h3>
+        <p>{classTitle}</p>
       </div>
       <Link to={`/profile/${id}`}>
         <button>{">"} Saiba mais</button>
