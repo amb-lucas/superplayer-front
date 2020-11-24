@@ -10,6 +10,7 @@ import HomePage from "./pages/Home";
 import ProfilePageIndex from "./pages/Profile";
 import SearchPageIndex from "./pages/Search";
 import RegisterPageIndex from "./pages/Register";
+import LoginPageIndex from "./pages/Login";
 
 const Routes = () => {
   return (
@@ -21,6 +22,7 @@ const Routes = () => {
           <Route path="/profile" component={ProfilePageIndex} />
           <Route path="/search" component={SearchPageIndex} />
           <Route path="/register" component={RegisterPageIndex} />
+          <Route path="/login" component={LoginPageIndex} />
         </Switch>
         <Footer />
       </ScrollToTop>

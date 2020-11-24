@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Dropzone from "../../components/dropzone";
 
@@ -65,6 +66,7 @@ const RegisterPage = ({ handleRegister }) => {
             <input
               id="email"
               type="email"
+              required="required"
               onChange={(e) => handleEmailChange(e)}
             ></input>
             <br />
@@ -94,7 +96,10 @@ const RegisterPage = ({ handleRegister }) => {
           </div>
         </fieldset>
 
-        <button type="submit">Cadastrar</button>
+        <div className="bottom-box">
+          <button type="submit">Cadastrar</button>
+          <Link to="/login">Já é cadastrado? Entre aqui</Link>
+        </div>
       </form>
     </div>
   );

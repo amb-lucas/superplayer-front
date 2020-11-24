@@ -1,28 +1,28 @@
-.register-form {
+.login-form {
   margin-top: 48px;
   background-color: var(--background-tabs);
   padding: 24px 36px;
   border-radius: 24px;
 }
 
-.register-form fieldset {
+.login-form fieldset {
   border-radius: 24px;
   border-width: 3px;
   border-style: solid;
   padding: 24px;
 }
 
-.register-form legend {
+.login-form legend {
   font-size: 36px;
   color: var(--text-active);
 }
 
-.register-form label {
+.login-form label {
   font-size: 24px;
   color: var(--text-active);
 }
 
-.register-form input {
+.login-form input {
   font-size: 30px;
 
   width: 480px;
@@ -37,7 +37,7 @@
   margin-bottom: 30px;
 }
 
-.register-form input[type="checkbox"] {
+.login-form input[type="checkbox"] {
   height: 24px;
   width: 24px;
 
@@ -45,16 +45,7 @@
   border-radius: 50%;
 }
 
-#about-me {
-  display: flex;
-  justify-content: space-between;
-}
-
-#about-me div:last-of-type {
-  text-align: center;
-}
-
-.register-form button {
+.login-form button {
   margin-top: 24px;
   padding: 18px 32px;
   background-color: var(--cta);
@@ -65,15 +56,15 @@
   border-radius: 24px;
   transition: 0.2s;
 }
-.register-form button:hover {
+.login-form button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-.register-form .bottom-box {
+.login-form .bottom-box {
   position: relative;
 }
-.register-form .bottom-box a {
+.login-form .bottom-box a {
   font-size: 22px;
   position: absolute;
   bottom: 0;
