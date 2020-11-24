@@ -1,43 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import Api from "../../services/api";
 
 import SearchPage from "./search";
-
-const queryResponseSample = {
-  total: 2,
-  trainers: [
-    {
-      name: "Yodami",
-      title: "Coach de League of Legends",
-      photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-      description: "League of Legends Jungle, para todos os níveis",
-      id: "1",
-    },
-    {
-      name: "Zilde Souto",
-      title: "Jungle da UFPE Virtus",
-      photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-      description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
-      id: "2",
-    },
-    {
-      name: "Yodami",
-      title: "Coach de League of Legends",
-      photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-      description: "League of Legends Jungle, para todos os níveis",
-      id: "3",
-    },
-    {
-      name: "Zilde Souto",
-      title: "Jungle da UFPE Virtus",
-      photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-      description: "Aprenda a gankar  com o Top 1 Rek'Sai BR",
-      id: "4",
-    },
-  ],
-};
 
 const SearchIndex = (props) => {
   const [queryValue, setQueryValue] = useState(
@@ -46,15 +12,21 @@ const SearchIndex = (props) => {
       : props.location.search.split("term=")[1].split("=")[0]
   );
 
-  const [queryResponse, setQueryResponse] = useState(queryResponseSample);
+  const [queryLoading, setQueryLoading] = useState(true);
+  const [queryResponse, setQueryResponse] = useState({
+    total: 0,
+    trainers: [],
+  });
+
   const makeQuery = async (query) => {
+    setQueryLoading(true);
+    history.push(`/search?term=${query}`);
+
     Api.get("search", {
       params: { term: query },
     }).then((res) => {
       const responseData = res.data.searchAns;
-
-      console.log(responseData);
-
+      setQueryLoading(false);
       setQueryResponse({
         total: responseData.length,
         trainers: responseData.map(({ name, role, classTitle, user }) => {
@@ -67,8 +39,6 @@ const SearchIndex = (props) => {
           };
         }),
       });
-
-      history.push(`/search?term=${query}`);
     });
   };
 
@@ -79,9 +49,14 @@ const SearchIndex = (props) => {
     makeQuery(query);
   };
 
+  useEffect(() => {
+    makeQuery(queryValue);
+  }, []);
+
   return (
     <SearchPage
       queryValue={queryValue}
+      queryLoading={queryLoading}
       handleNewQuery={handleNewQuery}
       queryResponse={queryResponse}
     />

@@ -5,7 +5,12 @@ import TrainerCard from "../../components/trainerCard";
 
 import "./styles.css";
 
-const SearchPage = ({ queryValue, handleNewQuery, queryResponse }) => {
+const SearchPage = ({
+  queryValue,
+  queryLoading,
+  handleNewQuery,
+  queryResponse,
+}) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleChangeInput = (value) => {
@@ -35,23 +40,32 @@ const SearchPage = ({ queryValue, handleNewQuery, queryResponse }) => {
 
         <div id="search-results">
           <TitleTab title="eTrainers encontrados" />
-
-          <div className="trainers-list">
-            {queryResponse.trainers.map(
-              ({ name, photo, role, classTitle, id }, i) => {
-                return (
-                  <TrainerCard
-                    key={`trainer-${i}`}
-                    name={name}
-                    role={role}
-                    photo={photo}
-                    classTitle={classTitle}
-                    id={id}
-                  />
-                );
-              }
-            )}
-          </div>
+          {queryLoading ? (
+            <div className="loader"></div>
+          ) : (
+            <div className="trainers-list">
+              {queryResponse.total === 0 ? (
+                <h3 className="no-trainer-found">
+                  Nenhum treinador encontrado
+                </h3>
+              ) : (
+                queryResponse.trainers.map(
+                  ({ name, photo, role, classTitle, id }, i) => {
+                    return (
+                      <TrainerCard
+                        key={`trainer-${i}`}
+                        name={name}
+                        role={role}
+                        photo={photo}
+                        classTitle={classTitle}
+                        id={id}
+                      />
+                    );
+                  }
+                )
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
