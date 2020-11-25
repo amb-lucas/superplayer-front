@@ -28,9 +28,10 @@ const Header = () => {
             <FaCaretDown size={34} />
 
             <div className="dropdown-content">
-              <div className="dropdown-item">
-                <Link to="/">Meu Perfil</Link>
-              </div>
+              <Link to="/profile">
+                <div className="dropdown-item">Meu Perfil</div>
+              </Link>
+
               <div className="dropdown-item" onClick={handleLogout}>
                 Logout
               </div>

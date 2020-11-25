@@ -3,10 +3,9 @@ import { Redirect, useHistory } from "react-router-dom";
 
 import { isAuthenticated } from "../../context/auth";
 import Api from "../../services/api";
+import ReadFileAsync from "../../utils/readFileAsync";
 
 import RegisterPage from "./register";
-
-import ReadFileAsync from "../../utils/readFileAsync";
 
 const RegisterIndex = () => {
   const history = useHistory();
@@ -30,7 +29,7 @@ const RegisterIndex = () => {
         }
       });
     } catch (err) {
-      if (err.response.status === 400) {
+      if (err.response && err.response.status === 400) {
         alert("Email já cadastrado, tente com um diferente.");
       } else {
         alert("Erro no servidor, por favor tente novamente mais tarde.");

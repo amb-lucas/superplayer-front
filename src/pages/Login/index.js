@@ -25,7 +25,7 @@ const LoginIndex = () => {
       });
     } catch (err) {
       setLoading(false);
-      if (err.response.status === 401) {
+      if (err.response && err.response.status === 401) {
         alert("Usuário ou senha incorretos");
       } else {
         alert("Erro do servidor, tente novamente mais tarde.");

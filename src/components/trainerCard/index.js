@@ -12,7 +12,7 @@ const trainerCard = ({ name, photo, role, classTitle, id }) => {
         <h3>{role}</h3>
         <p>{classTitle}</p>
       </div>
-      <Link to={`/profile/${id}`}>
+      <Link to={`/trainer/${id}`}>
         <button>{">"} Saiba mais</button>
       </Link>
     </div>

@@ -13,6 +13,12 @@ const App = () => {
     setAuthTokens(data);
   };
 
+  const handleUpdate = (data) => {
+    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    tokens.user = data;
+    setAuthTokens(tokens);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("tokens");
     setAuthTokens();
@@ -25,6 +31,7 @@ const App = () => {
           authTokens,
           login: handleLogin,
           logout: handleLogout,
+          update: handleUpdate,
         }}
       >
         <Routes />

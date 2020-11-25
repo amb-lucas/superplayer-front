@@ -1,185 +1,89 @@
-.summary-top {
-  margin-top: 32px;
-  display: flex;
-}
-
-#profile-summary img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-
-  margin-right: 72px;
-}
-
-#profile-summary h1 {
-  margin-top: 32px;
-  font-size: 64px;
-  color: var(--text-active);
-}
-
-#profile-summary h3 {
-  font-size: 32px;
-  color: var(--text-active);
-  margin-bottom: 56px;
-}
-
-#profile-summary button {
-  padding: 8px 24px;
-  border-radius: 24px;
-  border-style: solid;
-  border-width: 4px;
-  border-color: var(--cta);
-
-  outline: none;
-  font-size: 32px;
-  font-weight: 700;
-
-  transition: 0.2s;
-}
-#profile-summary button:hover {
-  opacity: 0.8;
-}
-.primary-btn {
-  margin-right: 48px;
-  color: var(--text-active);
-  background-color: var(--cta);
-}
-.secondary-btn {
-  color: var(--cta);
-  background-color: var(--text-active);
-}
-
-.profile-simple-box {
-  margin-top: 36px;
-  padding: 24px;
-  border-radius: 24px;
-  color: var(--text-active);
+.update-profile-form {
+  margin-top: 48px;
   background-color: var(--background-tabs);
-}
-.profile-summary-intro {
-  font-size: 22px;
-  color: var(--text-active);
-  line-height: 28px;
+  padding: 24px 36px;
+  border-radius: 24px;
 }
 
-.multiline-text {
-  display: block;
-  margin-bottom: 12px;
-}
-.profile-summary-intro .multiline-text:last-of-type {
-  margin-bottom: 0;
-}
-
-#class-details {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-.summary-box {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#class-request {
-  padding: 24px;
-  background-color: var(--background-tabs);
-
-  border-style: solid;
+.update-profile-form fieldset {
+  border-radius: 24px;
   border-width: 3px;
-  border-color: var(--cta);
-  border-radius: 24px;
-
-  text-align: center;
-  color: var(--text-active);
-
-  margin-bottom: 64px;
+  border-style: solid;
+  padding: 24px;
+  position: relative;
 }
-#class-request h2 {
+
+.update-profile-form legend {
   font-size: 36px;
-  margin-bottom: 16px;
-}
-#class-request h3 {
-  font-size: 24px;
-  font-weight: 400;
-
-  margin-bottom: 32px;
-}
-
-#class-request input {
-  border-radius: 24px;
-  border-width: 0;
-  outline: none;
-  font-size: 24px;
-
-  width: 400px;
-
-  padding: 16px 6px 16px 24px;
-  margin-bottom: 18px;
-}
-
-#class-request button {
-  background-color: var(--cta);
   color: var(--text-active);
-  font-weight: 700;
+}
+
+.update-profile-form label {
+  font-size: 24px;
+  color: var(--text-active);
+}
+
+.update-profile-form input {
   font-size: 30px;
 
-  margin-top: 18px;
-  padding: 12px 24px;
+  width: 480px;
+  padding: 12px 30px;
 
+  border-radius: 20px;
+  border: none;
   outline: none;
-  border-width: 0;
-  border-radius: 24px;
 
-  transition: 0.2s;
-}
-#class-request button:hover {
-  opacity: 0.8;
-  cursor: pointer;
+  margin-top: 6px;
+  margin-right: 36px;
+  margin-bottom: 30px;
 }
 
-#class-feedback {
-  color: var(--text-active);
-  font-size: 18px;
-  margin-bottom: 64px;
-}
-#class-feedback h2 {
-  margin-bottom: 36px;
-}
-
-#end-of-page-cta {
+#basic-data {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 64px;
 }
-#end-of-page-cta .white-box {
-  width: 476px;
-  border-radius: 24px;
-  padding: 40px 32px;
+
+#basic-data div:last-of-type {
   text-align: center;
-  background-color: var(--text-active);
 }
-#end-of-page-cta .white-box h2 {
-  font-size: 32px;
-}
-#end-of-page-cta .white-box button {
-  margin-top: 40px;
-  font-size: 32px;
-  font-weight: 700;
-  padding: 12px 24px;
-  border-width: 4px;
-  border-color: var(--cta);
-  border-radius: 24px;
-  border-style: solid;
-  outline: none;
-  transition: 0.2s;
-}
-#end-of-page-cta .white-box button:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-#end-of-page-cta .white-box:first-of-type button {
+
+.update-profile-form button {
+  margin-top: 24px;
+  padding: 18px 32px;
   background-color: var(--cta);
   color: var(--text-active);
+  font-size: 32px;
+  font-weight: 700;
+  border-width: 0;
+  border-radius: 24px;
+  transition: 0.2s;
 }
-#end-of-page-cta .white-box:last-of-type button {
-  color: var(--cta);
+.update-profile-form button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.update-profile-form .bottom-box {
+  position: relative;
+}
+.update-profile-form .bottom-box a {
+  font-size: 22px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-decoration: solid;
+  color: var(--text-active);
+}
+
+.update-profile-form .profile-picture img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+}
+
+.update-profile-form .trainer-data {
+  position: absolute;
+  color: var(--text-active);
+  font-size: 30px;
+  bottom: 16px;
 }

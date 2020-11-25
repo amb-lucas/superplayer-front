@@ -8,6 +8,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 
 import HomePage from "./pages/Home";
+import TrainerPageIndex from "./pages/Trainer";
 import ProfilePageIndex from "./pages/Profile";
 import SearchPageIndex from "./pages/Search";
 import RegisterPageIndex from "./pages/Register";
@@ -20,7 +21,8 @@ const Routes = () => {
         <Header />
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/profile" component={ProfilePageIndex} />
+          <PrivateRoute path="/profile" exact component={ProfilePageIndex} />
+          <Route path="/trainer/:id" component={TrainerPageIndex} />
           <PrivateRoute path="/search" component={SearchPageIndex} />
           <Route path="/register" component={RegisterPageIndex} />
           <Route path="/login" component={LoginPageIndex} />

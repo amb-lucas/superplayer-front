@@ -1,138 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 
-import RatingStars from "../../components/ratingStars";
-import ClassSummaryBox from "../../components/classSummaryBox";
+import Dropzone from "../../components/dropzone";
 
 import "./styles.css";
-import CommentBox from "../../components/comments";
 
-const ProfilePage = ({
-  name,
-  photo,
-  rating,
-  title,
-  intro,
-  train,
-  comments,
-}) => {
-  const introText = intro.split("\n").map((text, idx) => {
-    return (
-      <span className="multiline-text" key={`intro-${idx}`}>
-        {text}
-      </span>
-    );
-  });
+const ProfilePage = ({ name, photo, email, isTrainer, updateProfile }) => {
+  const [nameInput, setNameInput] = useState(name);
+  const handleNameChange = (e) => {
+    setNameInput(e.target.value);
+  };
 
-  const trainText = train.split("\n").map((text, idx) => {
-    return (
-      <span className="multiline-text" key={`train-${idx}`}>
-        {text}
-      </span>
-    );
-  });
+  const [selectedFile, setSelectedFile] = useState();
+  const handleUploadImage = (image) => {
+    setSelectedFile(image);
+  };
 
-  const commentsSection = comments && (
-    <div id="class-feedback">
-      <h2>O que os alunos de {name} falam sobre seus treinos?</h2>
-      {comments.map(({ comment, author }, idx) => {
-        return (
-          <CommentBox
-            key={`comment-${idx}`}
-            comment={comment}
-            author={author}
-          />
-        );
-      })}
-    </div>
-  );
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    updateProfile({ name: nameInput, photo: selectedFile });
+  };
 
   return (
-    <div className="profile-page">
-      <div className="page-inside">
-        <div id="profile-summary">
-          <div className="summary-top">
-            <img src={photo} alt={`${name}-profile`} />
-            <div className="summary-details">
-              <h1>{name}</h1>
-              <RatingStars rating={rating} />
-              <h3>{title}</h3>
+    <div className="page-inside">
+      <form className="update-profile-form" onSubmit={handleFormSubmit}>
+        <fieldset id="basic-data">
+          <legend>Dados Básicos</legend>
 
-              <button
-                className="primary-btn"
-                onClick={() => (window.location.href = "#class-request")}
-              >
-                Pedir treino
-              </button>
-              <button
-                className="secondary-btn"
-                onClick={() => (window.location.href = "#class-details")}
-              >
-                Sobre o treino
-              </button>
+          <div>
+            <label htmlFor="name">Nome</label>
+            <br />
+            <input
+              id="name"
+              type="text"
+              required="required"
+              defaultValue={name}
+              onChange={(e) => handleNameChange(e)}
+            ></input>
+            <br />
+
+            <label htmlFor="email">E-mail</label>
+            <br />
+            <input
+              id="email"
+              type="email"
+              required="required"
+              disabled="disabled"
+              defaultValue={email}
+            ></input>
+            <br />
+
+            <div className="trainer-data">
+              <h2>{isTrainer ? "Perfil de Treinador" : "Perfil de Jogador"}</h2>
             </div>
           </div>
 
-          <div className="profile-simple-box">
-            <p className="profile-summary-intro">{introText}</p>
-          </div>
-        </div>
-
-        <div id="class-details">
-          <div className="summary-box">
-            <ClassSummaryBox
-              primaryText="Eu ensino"
-              value="League of Legends"
-            />
-            <ClassSummaryBox
-              primaryText="Para jogadores"
-              value="De todos os níveis"
-            />
-            <ClassSummaryBox
-              primaryText="Eu cobro"
-              value="R$ 60"
-              secondaryText="por hora"
-            />
-          </div>
-
-          <div className="profile-simple-box">
-            <p className="profile-summary-intro">{trainText}</p>
-          </div>
-        </div>
-
-        <div id="class-request">
-          <h2>Tenha já seu treino!</h2>
-          <h3>Insira seus dados e Yodami irá lhe contatar.</h3>
-
-          <input placeholder="Insira seu nome"></input>
-          <br />
-          <input placeholder="Insira seu email"></input>
-          <br />
-
-          <button>Pedir treino</button>
-        </div>
-
-        {commentsSection}
-
-        <div id="end-of-page-cta">
-          <div className="white-box">
-            <h2>Se interessou pelo treino?</h2>
+          <div className="profile-picture">
+            <label>Imagem de Perfil</label>
             <br />
-            <h2>Entre já em contato!</h2>
-
-            <button onClick={() => (window.location.href = "#class-request")}>
-              Pedir treino
-            </button>
+            <Dropzone
+              defaultFile={photo}
+              onFileUploaded={(img) => handleUploadImage(img)}
+            />
           </div>
+        </fieldset>
 
-          <div className="white-box">
-            <h2>Treinou com Yodami?</h2>
-            <br />
-            <h2>Deixe seu comentário!</h2>
-
-            <button>Avaliar treino</button>
-          </div>
+        <div className="bottom-box">
+          <button type="submit">Atualizar Dados</button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
