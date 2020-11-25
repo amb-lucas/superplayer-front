@@ -1,6 +1,7 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
+import { isAuthenticated } from "../../context/auth";
 import Api from "../../services/api";
 
 import RegisterPage from "./register";
@@ -34,7 +35,11 @@ const RegisterIndex = () => {
     }
   };
 
-  return <RegisterPage handleRegister={handleRegister} />;
+  return isAuthenticated() ? (
+    <Redirect to="/" />
+  ) : (
+    <RegisterPage handleRegister={handleRegister} />
+  );
 };
 
 export default RegisterIndex;

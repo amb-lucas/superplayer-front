@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import ScrollToTop from "./components/scrollToTop";
 
+import PrivateRoute from "./components/privateRoute";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -20,7 +21,7 @@ const Routes = () => {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/profile" component={ProfilePageIndex} />
-          <Route path="/search" component={SearchPageIndex} />
+          <PrivateRoute path="/search" component={SearchPageIndex} />
           <Route path="/register" component={RegisterPageIndex} />
           <Route path="/login" component={LoginPageIndex} />
         </Switch>

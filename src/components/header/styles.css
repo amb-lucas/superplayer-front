@@ -37,3 +37,40 @@ header {
 
   text-decoration: underline;
 }
+
+.header-inside .auth-greet {
+  font-size: 28px;
+  color: var(--text-active);
+}
+.header-inside .auth-greet p {
+  margin-right: 18px;
+}
+
+.header-inside .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 240px;
+  right: 0;
+  z-index: 10;
+  background-color: var(--background-navbar);
+  font-size: 24px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content {
+  color: var(--text-inactive);
+}
+.dropdown-item {
+  padding: 12px 16px;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+  background-color: var(--background-tabs);
+  color: var(--text-active);
+  cursor: pointer;
+}

@@ -59,6 +59,11 @@ body {
   --purple: #9b51e0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .App {
   min-height: 100vh;
   width: 100vw;
