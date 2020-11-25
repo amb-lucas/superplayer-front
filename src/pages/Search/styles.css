@@ -22,8 +22,8 @@
 
 .loader {
   margin: 0 auto;
-  border: 16px solid var(--text-active); /* Light grey */
-  border-top: 16px solid var(--cta); /* Blue */
+  border: 16px solid var(--text-active);
+  border-top: 16px solid var(--cta);
   border-radius: 50%;
   width: 120px;
   height: 120px;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./styles.css";
 
-const LoginPage = ({ handleLoginSubmit }) => {
+const LoginPage = ({ handleLoginSubmit, loading }) => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -33,6 +33,8 @@ const LoginPage = ({ handleLoginSubmit }) => {
   return (
     <div className="page-inside">
       <form className="login-form" onSubmit={handleFormSubmit}>
+        <div className={loading ? "loader" : ""}></div>
+
         <fieldset id="login-fieldset">
           <legend>Login</legend>
 

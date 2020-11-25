@@ -29,15 +29,17 @@ const SearchIndex = (props) => {
       setQueryLoading(false);
       setQueryResponse({
         total: responseData.length,
-        trainers: responseData.map(({ name, role, classTitle, user }) => {
-          return {
-            name,
-            role,
-            photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-            classTitle,
-            id: user,
-          };
-        }),
+        trainers: responseData.map(
+          ({ name, role, profileImage, classTitle, user }) => {
+            return {
+              name,
+              role,
+              photo: profileImage,
+              classTitle,
+              id: user,
+            };
+          }
+        ),
       });
     });
   };

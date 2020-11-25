@@ -6,21 +6,24 @@ import Api from "../../services/api";
 
 import RegisterPage from "./register";
 
+import ReadFileAsync from "../../utils/readFileAsync";
+
 const RegisterIndex = () => {
   const history = useHistory();
 
   const handleRegister = async ({ name, email, password, profileImage }) => {
+    const image = profileImage ? await ReadFileAsync(profileImage) : null;
+
     const formData = {
       name,
       email,
       password,
-      profileImage,
+      profileImage: image,
       trainer: false,
     };
 
     try {
       await Api.post("register", formData).then((res) => {
-        console.log(res);
         if (res.status === 200) {
           alert("Usuário cadastrado com sucesso!");
           history.push("/");

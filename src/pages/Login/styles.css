@@ -1,4 +1,5 @@
 .login-form {
+  position: relative;
   margin-top: 48px;
   background-color: var(--background-tabs);
   padding: 24px 36px;
@@ -71,4 +72,26 @@
   right: 0;
   text-decoration: solid;
   color: var(--text-active);
+}
+
+.login-form .loader {
+  position: absolute;
+  right: 140px;
+  top: 120px;
+
+  width: 160px;
+  height: 160px;
+
+  border: 16px solid var(--text-active);
+  border-top: 16px solid var(--cta);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
