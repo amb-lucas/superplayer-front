@@ -55,8 +55,6 @@ const TrainerEditionIndex = () => {
     makeQuery();
   }, [id]);
 
-  console.log(queryResponse);
-
   const {
     role: trainerRole,
     about: trainerIntro,
