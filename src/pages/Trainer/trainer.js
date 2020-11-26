@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { isAuthenticated, GetAuthData } from "../../context/auth";
 
 import RatingStars from "../../components/ratingStars";
 import ClassSummaryBox from "../../components/classSummaryBox";
@@ -18,6 +20,7 @@ const TrainerPage = ({
   costPer = "",
   train = "",
   comments = [],
+  handleRequestClass,
 }) => {
   const introText = intro.split("\n").map((text, idx) => {
     return (
@@ -49,6 +52,37 @@ const TrainerPage = ({
       })}
     </div>
   );
+
+  const [nameInputValue, setNameInputValue] = useState(
+    isAuthenticated() ? GetAuthData().user.name : ""
+  );
+  const handleNameInputChange = (e) => {
+    setNameInputValue(e.target.value);
+  };
+
+  const [emailInputValue, setEmailInputValue] = useState(
+    isAuthenticated() ? GetAuthData().user.email : ""
+  );
+  const handleEmailInputChange = (e) => {
+    setEmailInputValue(e.target.value);
+  };
+
+  const [adInfoValue, setAdInfoValue] = useState("");
+  const handleAdInfoChange = (e) => {
+    setAdInfoValue(e.target.value);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: nameInputValue,
+      email: emailInputValue,
+      observations: adInfoValue,
+    };
+
+    handleRequestClass(data);
+  };
 
   return (
     <div className="trainer-page">
@@ -101,12 +135,34 @@ const TrainerPage = ({
           <h2>Tenha já seu treino!</h2>
           <h3>Insira seus dados e {name} irá lhe contatar.</h3>
 
-          <input placeholder="Insira seu nome"></input>
-          <br />
-          <input placeholder="Insira seu email"></input>
-          <br />
+          <form>
+            <input
+              type="text"
+              required="required"
+              placeholder="Insira seu nome"
+              onChange={(e) => handleNameInputChange(e)}
+              defaultValue={nameInputValue}
+            ></input>
+            <br />
+            <input
+              type="email"
+              required="required"
+              placeholder="Insira seu email"
+              onChange={(e) => handleEmailInputChange(e)}
+              defaultValue={emailInputValue}
+            ></input>
+            <br />
+            <textarea
+              type="text"
+              placeholder="Caso tenha, insira observações adicionais"
+              onChange={(e) => handleAdInfoChange(e)}
+            ></textarea>
+            <br />
 
-          <button>Pedir treino</button>
+            <button type="submit" onClick={(e) => handleFormSubmit(e)}>
+              Pedir treino
+            </button>
+          </form>
         </div>
 
         {commentsSection}

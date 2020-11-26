@@ -50,6 +50,22 @@ const TrainerPageIndex = (props) => {
         };
       });
 
+  const handleRequestClass = async (data) => {
+    try {
+      await Api.post(`trainer/${id}/request`, data).then((res) => {
+        if (res.status === 200) {
+          alert("Treino requisitado com sucesso!");
+        }
+      });
+    } catch (err) {
+      if (err.response && err.response.status === 400) {
+        alert("Treino requisitado com sucesso!");
+      } else {
+        alert("Ocorreu um erro no servidor, tente novamente mais tarde");
+      }
+    }
+  };
+
   return loading ? (
     <LoadingPage />
   ) : (
@@ -65,6 +81,7 @@ const TrainerPageIndex = (props) => {
       costPer={costPer}
       train={train}
       comments={comments}
+      handleRequestClass={handleRequestClass}
     />
   );
 };

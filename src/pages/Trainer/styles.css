@@ -111,10 +111,25 @@
   outline: none;
   font-size: 24px;
 
-  width: 400px;
+  width: 500px;
 
   padding: 16px 6px 16px 24px;
   margin-bottom: 18px;
+}
+#class-request textarea {
+  border-radius: 24px;
+  border-width: 0;
+  outline: none;
+  font-size: 24px;
+
+  width: 500px;
+  height: 140px;
+
+  padding: 16px 6px 16px 24px;
+  margin-bottom: 18px;
+
+  font-family: Arial;
+  resize: none;
 }
 
 #class-request button {
