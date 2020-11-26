@@ -35,7 +35,7 @@ const TrainerPage = ({
     );
   });
 
-  const commentsSection = comments && (
+  const commentsSection = comments.length > 0 && (
     <div id="class-feedback">
       <h2>O que os alunos de {name} falam sobre seus treinos?</h2>
       {comments.map(({ comment, author }, idx) => {
