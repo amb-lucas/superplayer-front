@@ -75,7 +75,7 @@ const TrainerEditionPage = ({
       <div id="trainer-edit-page">
         <h2 className="title">Configuração da Página de Treinador</h2>
 
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="fieldset-bg">
             <fieldset className="primary-data">
               <legend>Dados primários</legend>
@@ -201,9 +201,7 @@ const TrainerEditionPage = ({
             <div className="white-box publish-page-box">
               <h2>Está pronto?</h2>
               <h2>Publique já sua página!</h2>
-              <button type="submit" onClick={(e) => handleFormSubmit(e)}>
-                Publicar página
-              </button>
+              <button type="submit">Publicar página</button>
             </div>
           </div>
         </form>
