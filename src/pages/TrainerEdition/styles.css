@@ -114,6 +114,7 @@
   font-size: 32px;
   font-weight: 700;
 
+  cursor: pointer;
   transition: 0.2s;
 }
 .white-box button:hover {
