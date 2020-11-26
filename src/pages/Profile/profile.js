@@ -22,52 +22,56 @@ const ProfilePage = ({ name, photo, email, isTrainer, updateProfile }) => {
 
   return (
     <div className="page-inside">
-      <form className="update-profile-form" onSubmit={handleFormSubmit}>
-        <fieldset id="basic-data">
-          <legend>Dados Básicos</legend>
+      <div id="profile-page">
+        <form className="update-profile-form" onSubmit={handleFormSubmit}>
+          <fieldset id="basic-data">
+            <legend>Dados Básicos</legend>
 
-          <div>
-            <label htmlFor="name">Nome</label>
-            <br />
-            <input
-              id="name"
-              type="text"
-              required="required"
-              defaultValue={name}
-              onChange={(e) => handleNameChange(e)}
-            ></input>
-            <br />
+            <div>
+              <label htmlFor="name">Nome</label>
+              <br />
+              <input
+                id="name"
+                type="text"
+                required="required"
+                defaultValue={name}
+                onChange={(e) => handleNameChange(e)}
+              ></input>
+              <br />
 
-            <label htmlFor="email">E-mail</label>
-            <br />
-            <input
-              id="email"
-              type="email"
-              required="required"
-              disabled="disabled"
-              defaultValue={email}
-            ></input>
-            <br />
+              <label htmlFor="email">E-mail</label>
+              <br />
+              <input
+                id="email"
+                type="email"
+                required="required"
+                disabled="disabled"
+                defaultValue={email}
+              ></input>
+              <br />
 
-            <div className="trainer-data">
-              <h2>{isTrainer ? "Perfil de Treinador" : "Perfil de Jogador"}</h2>
+              <div className="trainer-data">
+                <h2>
+                  {isTrainer ? "Perfil de Treinador" : "Perfil de Jogador"}
+                </h2>
+              </div>
             </div>
-          </div>
 
-          <div className="profile-picture">
-            <label>Imagem de Perfil</label>
-            <br />
-            <Dropzone
-              defaultFile={photo}
-              onFileUploaded={(img) => handleUploadImage(img)}
-            />
-          </div>
-        </fieldset>
+            <div className="profile-picture">
+              <label>Imagem de Perfil</label>
+              <br />
+              <Dropzone
+                defaultFile={photo}
+                onFileUploaded={(img) => handleUploadImage(img)}
+              />
+            </div>
+          </fieldset>
 
-        <div className="bottom-box">
-          <button type="submit">Atualizar Dados</button>
-        </div>
-      </form>
+          <div className="bottom-box">
+            <button type="submit">Atualizar Dados</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
