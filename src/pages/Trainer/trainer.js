@@ -9,7 +9,7 @@ import "./styles.css";
 const TrainerPage = ({
   name = "",
   photo = "",
-  rating = "",
+  rating = "0",
   title = "",
   intro = "",
   teaching = "",

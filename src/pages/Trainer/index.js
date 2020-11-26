@@ -32,7 +32,7 @@ const TrainerPageIndex = (props) => {
   const name = loading ? "" : queryResponse.trainerProfile.name;
   const title = loading ? "" : queryResponse.trainerProfile.role;
   const photo = loading ? "" : queryResponse.trainerProfile.profileImage;
-  const rating = "5";
+  const rating = loading ? "0" : queryResponse.trainerProfile.ranking;
   const intro = loading ? "" : queryResponse.trainerProfile.about;
 
   const teaching = loading ? "" : queryResponse.trainerProfile.teaching;

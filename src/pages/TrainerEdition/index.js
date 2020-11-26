@@ -1,13 +1,17 @@
-import React from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
-import { isAuthenticated, GetAuthData } from "../../context/auth";
+import { GetAuthData } from "../../context/auth";
 import Api from "../../services/api";
 
+import LoadingPage from "../../components/loadingPage";
 import TrainerEdition from "./trainerEdition";
 
 const TrainerEditionIndex = () => {
   const history = useHistory();
+
+  const [queryResponse, setQueryResponse] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const handleUpdateData = async (data) => {
     const formData = {
@@ -33,10 +37,51 @@ const TrainerEditionIndex = () => {
     }
   };
 
-  return isAuthenticated() ? (
-    <TrainerEdition handleUpdateData={handleUpdateData} />
+  const id = GetAuthData().user._id;
+
+  useEffect(() => {
+    const makeQuery = async () => {
+      try {
+        await Api.get(`trainer/${id}`).then((res) => {
+          setQueryResponse(res.data);
+          setLoading(false);
+        });
+      } catch (err) {
+        alert("Erro no servidor, tente novamente mais tarde.");
+        history.push("/");
+      }
+    };
+
+    makeQuery();
+  }, [id]);
+
+  console.log(queryResponse);
+
+  const {
+    role: trainerRole,
+    about: trainerIntro,
+    classTitle,
+    teaching: teach,
+    forPlayers,
+    cash: price,
+    trainerMod: perPrice,
+    description: classInfo,
+  } = loading ? {} : queryResponse.trainerProfile;
+
+  return loading ? (
+    <LoadingPage />
   ) : (
-    <Redirect to="/login" />
+    <TrainerEdition
+      handleUpdateData={handleUpdateData}
+      trainerRole={trainerRole}
+      trainerIntro={trainerIntro}
+      classTitle={classTitle}
+      teach={teach}
+      forPlayers={forPlayers}
+      price={price}
+      perPrice={perPrice}
+      classInfo={classInfo}
+    />
   );
 };
 
