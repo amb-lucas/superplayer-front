@@ -41,8 +41,6 @@ const TrainerPageIndex = (props) => {
   const costPer = loading ? "" : queryResponse.trainerProfile.trainerMod;
   const train = loading ? "" : queryResponse.trainerProfile.description;
 
-  console.log(queryResponse.trainerProfile);
-
   const comments = loading
     ? []
     : queryResponse.comments.map(({ name, message }) => {

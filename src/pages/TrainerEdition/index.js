@@ -1,12 +1,14 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
-import { isAuthenticated } from "../../context/auth";
+import { isAuthenticated, GetAuthData } from "../../context/auth";
 import Api from "../../services/api";
 
 import TrainerEdition from "./trainerEdition";
 
 const TrainerEditionIndex = () => {
+  const history = useHistory();
+
   const handleUpdateData = async (data) => {
     const formData = {
       role: data.trainerRoleValue,
@@ -19,18 +21,15 @@ const TrainerEditionIndex = () => {
       description: data.classInfoValue,
     };
 
-    console.log(formData.description);
-
     try {
       await Api.put("user/trainer/edit", formData).then((res) => {
-        console.log("atualizado");
         if (res.status === 200) {
-          alert("BOA POHA");
+          alert("Dados atualizados com sucesso");
+          history.push(`trainer/${GetAuthData().user._id}`);
         }
       });
     } catch (err) {
-      console.log(err.response);
-      console.log(err);
+      alert("Erro no servidor, tente novamente mais tarde.");
     }
   };
 
