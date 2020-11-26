@@ -13,9 +13,10 @@ const App = () => {
     setAuthTokens(data);
   };
 
-  const handleUpdate = (data) => {
+  const handleUpdate = ({ user }) => {
     const tokens = JSON.parse(localStorage.getItem("tokens"));
-    tokens.user = data;
+    tokens.user = user;
+    localStorage.setItem("tokens", JSON.stringify(tokens));
     setAuthTokens(tokens);
   };
 
