@@ -53,7 +53,7 @@ const TrainerEditionIndex = () => {
     };
 
     makeQuery();
-  }, [id]);
+  }, [id, history]);
 
   const {
     role: trainerRole,
