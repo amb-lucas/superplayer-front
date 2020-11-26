@@ -130,6 +130,7 @@
 
   font-family: Arial;
   resize: none;
+  line-height: 32px;
 }
 
 #class-request button {
