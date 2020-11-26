@@ -32,6 +32,14 @@ const Header = () => {
                 <div className="dropdown-item">Meu Perfil</div>
               </Link>
 
+              {GetAuthData().user.trainer && (
+                <Link to="/trainer-edit">
+                  <div className="dropdown-item">
+                    Configurações de Treinador
+                  </div>
+                </Link>
+              )}
+
               <div className="dropdown-item" onClick={handleLogout}>
                 Logout
               </div>
