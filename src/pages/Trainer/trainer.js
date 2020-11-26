@@ -135,7 +135,7 @@ const TrainerPage = ({
           <h2>Tenha já seu treino!</h2>
           <h3>Insira seus dados e {name} irá lhe contatar.</h3>
 
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <input
               type="text"
               required="required"
@@ -159,9 +159,7 @@ const TrainerPage = ({
             ></textarea>
             <br />
 
-            <button type="submit" onClick={(e) => handleFormSubmit(e)}>
-              Pedir treino
-            </button>
+            <button type="submit">Pedir treino</button>
           </form>
         </div>
 
