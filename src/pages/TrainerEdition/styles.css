@@ -1,0 +1,124 @@
+#trainer-edit-page .title {
+  font-size: 48px;
+  color: var(--text-active);
+  padding-top: 36px;
+  margin-bottom: 36px;
+}
+
+#trainer-edit-page .fieldset-bg {
+  margin-bottom: 48px;
+  background-color: var(--background-tabs);
+  padding: 24px 36px;
+  border-radius: 24px;
+}
+
+#trainer-edit-page fieldset {
+  border-radius: 24px;
+  border-width: 3px;
+  border-style: solid;
+  padding: 24px;
+  position: relative;
+}
+
+#trainer-edit-page legend {
+  font-size: 36px;
+  color: var(--text-active);
+}
+
+#trainer-edit-page label {
+  font-size: 24px;
+  color: var(--text-active);
+}
+
+#trainer-edit-page .primary-data input,
+#trainer-edit-page .class-title-field input {
+  font-size: 30px;
+
+  width: calc(100% - 60px);
+  padding: 12px 30px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  margin-top: 6px;
+  margin-right: 36px;
+  margin-bottom: 30px;
+}
+
+#trainer-edit-page textarea {
+  font-size: 24px;
+
+  height: 240px;
+  width: calc(100% - 40px);
+  padding: 12px 20px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  resize: none;
+  margin-top: 6px;
+
+  font-family: Arial;
+}
+
+#trainer-edit-page .class-data {
+  width: 980px;
+}
+#trainer-edit-page .class-data .box-row {
+  display: flex;
+  justify-content: space-between;
+}
+#trainer-edit-page .class-data .box-row div {
+  width: 470px;
+}
+#trainer-edit-page .class-data .box-row input {
+  font-size: 30px;
+
+  width: calc(100% - 60px);
+  padding: 12px 30px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  margin-top: 6px;
+  margin-right: 36px;
+  margin-bottom: 30px;
+}
+
+#trainer-edit-page .end-row {
+  display: flex;
+  justify-content: space-between;
+}
+.white-box {
+  width: calc(550px - 20px - 72px);
+  background-color: var(--text-active);
+  padding: 36px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 64px;
+}
+.white-box button {
+  margin-top: 36px;
+  padding: 8px 24px;
+  border-radius: 24px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--cta);
+
+  outline: none;
+  font-size: 32px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+.white-box button:hover {
+  opacity: 0.8;
+}
+.publish-page-box button {
+  background-color: var(--cta);
+  color: var(--text-active);
+}

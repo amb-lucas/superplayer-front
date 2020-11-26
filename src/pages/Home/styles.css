@@ -8,7 +8,7 @@
   background-size: max(100vw, 1100px);
 }
 
-.title {
+.top-home .title {
   font-size: 96px;
   color: var(--text-active);
   text-transform: uppercase;

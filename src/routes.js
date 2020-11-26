@@ -13,6 +13,7 @@ import ProfilePageIndex from "./pages/Profile";
 import SearchPageIndex from "./pages/Search";
 import RegisterPageIndex from "./pages/Register";
 import LoginPageIndex from "./pages/Login";
+import TrainerEditionIndex from "./pages/TrainerEdition";
 
 const Routes = () => {
   return (
@@ -23,7 +24,8 @@ const Routes = () => {
           <Route path="/" exact component={HomePage} />
           <PrivateRoute path="/profile" exact component={ProfilePageIndex} />
           <Route path="/trainer/:id" component={TrainerPageIndex} />
-          <PrivateRoute path="/search" component={SearchPageIndex} />
+          <Route path="/trainer-edit" component={TrainerEditionIndex} />
+          <Route path="/search" component={SearchPageIndex} />
           <Route path="/register" component={RegisterPageIndex} />
           <Route path="/login" component={LoginPageIndex} />
         </Switch>
