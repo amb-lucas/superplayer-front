@@ -90,3 +90,25 @@
   font-size: 30px;
   bottom: 16px;
 }
+
+#profile-page .bottom-box {
+  position: relative;
+}
+#profile-page .bottom-box a {
+  width: 100%;
+}
+#profile-page .bottom-box h2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  color: var(--text-active);
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.8;
+
+  font-size: 26px;
+}
+#profile-page .bottom-box h2:hover {
+  opacity: 1;
+}

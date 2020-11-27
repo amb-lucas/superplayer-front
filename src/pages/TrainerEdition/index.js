@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { GetAuthData } from "../../context/auth";
+import { GetAuthData, useAuth } from "../../context/auth";
 import Api from "../../services/api";
 
 import LoadingPage from "../../components/loadingPage";
@@ -9,8 +9,11 @@ import TrainerEdition from "./trainerEdition";
 
 const TrainerEditionIndex = () => {
   const history = useHistory();
+  const { upgrade } = useAuth();
 
-  const [queryResponse, setQueryResponse] = useState({});
+  const [queryResponse, setQueryResponse] = useState({
+    trainerProfile: {},
+  });
   const [loading, setLoading] = useState(true);
 
   const handleUpdateData = async (data) => {
@@ -29,6 +32,7 @@ const TrainerEditionIndex = () => {
       await Api.put("user/trainer/edit", formData).then((res) => {
         if (res.status === 200) {
           alert("Dados atualizados com sucesso");
+          if (!GetAuthData().user.trainer) upgrade();
           history.push(`trainer/${GetAuthData().user._id}`);
         }
       });
@@ -52,7 +56,8 @@ const TrainerEditionIndex = () => {
       }
     };
 
-    makeQuery();
+    if (GetAuthData().user.trainer) makeQuery();
+    else setLoading(false);
   }, [id, history]);
 
   const {

@@ -1,0 +1,10 @@
+#preview-trainer-profile {
+  z-index: 5;
+}
+
+.open {
+  display: block;
+}
+.close {
+  display: none;
+}

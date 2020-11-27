@@ -29,7 +29,7 @@ const MyDropzone = ({ onFileUploaded, defaultFile = "" }) => {
       <input {...getInputProps()} accept="image/*" />
 
       {selectedFileUrl ? (
-        <img src={selectedFileUrl} alt="Estabelecimento" />
+        <img src={selectedFileUrl} alt="Imagem de perfil" />
       ) : (
         <p>
           <FiUpload />

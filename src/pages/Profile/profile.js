@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
+import { GetAuthData } from "../../context/auth";
 import Dropzone from "../../components/dropzone";
 
 import "./styles.css";
@@ -69,6 +71,12 @@ const ProfilePage = ({ name, photo, email, isTrainer, updateProfile }) => {
 
           <div className="bottom-box">
             <button type="submit">Atualizar Dados</button>
+
+            {!GetAuthData().user.trainer && (
+              <Link to="trainer-edit">
+                <h2>{"> "} Deseja configurar um perfil de Treinador?</h2>
+              </Link>
+            )}
           </div>
         </form>
       </div>

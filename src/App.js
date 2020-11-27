@@ -20,6 +20,13 @@ const App = () => {
     setAuthTokens(tokens);
   };
 
+  const handleUpgradeToTrainer = () => {
+    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    tokens.user.trainer = true;
+    localStorage.setItem("tokens", JSON.stringify(tokens));
+    setAuthTokens(tokens);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("tokens");
     setAuthTokens();
@@ -33,6 +40,7 @@ const App = () => {
           login: handleLogin,
           logout: handleLogout,
           update: handleUpdate,
+          upgrade: handleUpgradeToTrainer,
         }}
       >
         <Routes />
