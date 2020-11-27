@@ -1,0 +1,93 @@
+#feedback-page {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+#feedback-page .feedback-form {
+  background-color: var(--background-tabs);
+  padding: 24px 36px;
+  border-radius: 24px;
+}
+
+#feedback-page fieldset {
+  border-radius: 24px;
+  border-width: 3px;
+  border-style: solid;
+  padding: 24px;
+  position: relative;
+}
+
+#feedback-page legend {
+  font-size: 36px;
+  color: var(--text-active);
+}
+
+#feedback-page img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#feedback-page .trainer-summary {
+  display: flex;
+  align-items: center;
+}
+#feedback-page .trainer-details {
+  color: var(--text-active);
+  padding-left: 48px;
+}
+#feedback-page .trainer-details h1 {
+  font-size: 48px;
+}
+#feedback-page .trainer-details h3 {
+  font-size: 36px;
+}
+
+#feedback-page .comment {
+  padding-top: 24px;
+}
+#feedback-page .comment h2 {
+  font-size: 36px;
+  color: var(--text-active);
+}
+#feedback-page .comment textarea {
+  width: calc(100% - 32px);
+  height: 140px;
+
+  border-radius: 24px;
+  border-width: 0;
+  outline: none;
+  font-size: 24px;
+
+  padding: 16px 6px 16px 24px;
+  margin-bottom: 18px;
+
+  font-family: Arial;
+  resize: none;
+  line-height: 32px;
+}
+#feedback-page .comment .label-title {
+  font-size: 24px;
+  color: var(--text-active);
+}
+
+#feedback-page .cta-button {
+  background-color: var(--cta);
+  color: var(--text-active);
+  font-weight: 700;
+  font-size: 30px;
+
+  margin-top: 18px;
+  padding: 12px 24px;
+
+  outline: none;
+  border-width: 0;
+  border-radius: 24px;
+
+  transition: 0.2s;
+}
+#feedback-page .cta-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

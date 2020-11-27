@@ -14,6 +14,7 @@ import SearchPageIndex from "./pages/Search";
 import RegisterPageIndex from "./pages/Register";
 import LoginPageIndex from "./pages/Login";
 import TrainerEditionIndex from "./pages/TrainerEdition";
+import FeedbackPageIndex from "./pages/Feedback";
 
 const Routes = () => {
   return (
@@ -24,6 +25,10 @@ const Routes = () => {
           <Route path="/" exact component={HomePage} />
           <PrivateRoute path="/profile" exact component={ProfilePageIndex} />
           <Route path="/trainer/:id" component={TrainerPageIndex} />
+          <PrivateRoute
+            path="/trainer-rating/:id"
+            component={FeedbackPageIndex}
+          />
           <PrivateRoute path="/trainer-edit" component={TrainerEditionIndex} />
           <Route path="/search" component={SearchPageIndex} />
           <Route path="/register" component={RegisterPageIndex} />

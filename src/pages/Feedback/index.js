@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import Api from "../../services/api";
-
+import Feedback from "./feedback";
 import LoadingPage from "../../components/loadingPage";
-import TrainerPage from "./trainer";
 
-const TrainerPageIndex = (props) => {
+const FeedbackIndex = (props) => {
   const history = useHistory();
 
   const [loading, setLoading] = useState(true);
@@ -32,59 +31,39 @@ const TrainerPageIndex = (props) => {
   const name = loading ? "" : queryResponse.trainerProfile.name;
   const title = loading ? "" : queryResponse.trainerProfile.role;
   const photo = loading ? "" : queryResponse.trainerProfile.profileImage;
-  const rating = loading ? "0" : queryResponse.trainerProfile.ranking;
-  const intro = loading ? "" : queryResponse.trainerProfile.about;
 
-  const teaching = loading ? "" : queryResponse.trainerProfile.teaching;
-  const forPlayers = loading ? "" : queryResponse.trainerProfile.forPlayers;
-  const price = loading ? "" : queryResponse.trainerProfile.cash;
-  const costPer = loading ? "" : queryResponse.trainerProfile.trainerMod;
-  const train = loading ? "" : queryResponse.trainerProfile.description;
-
-  const comments = loading
-    ? []
-    : queryResponse.comments.map(({ name, message }) => {
-        return {
-          comment: message,
-          author: name,
-        };
-      });
-
-  const handleRequestClass = async (data) => {
+  const handleCommentSubmit = async (data) => {
     try {
-      await Api.post(`trainer/${id}/request`, data).then((res) => {
+      await Api.post(`trainer/${id}/evaluate`, data).then((res) => {
         if (res.status === 200) {
-          alert("Treino requisitado com sucesso!");
+          alert("Treinador avaliado com sucesso!");
+          history.push(`/trainer/${id}`);
         }
       });
     } catch (err) {
       if (err.response && err.response.status === 400) {
-        alert("Treino requisitado com sucesso!");
+        if (err.response.data.signal === 1) {
+          alert("Erro: Você não requisitou treinos com esse treinador.");
+        } else {
+          alert("Erro: Você não pode se avaliar.");
+        }
       } else {
         alert("Ocorreu um erro no servidor, tente novamente mais tarde");
       }
+      history.push(`/trainer/${id}`);
     }
   };
 
   return loading ? (
     <LoadingPage />
   ) : (
-    <TrainerPage
-      id={id}
+    <Feedback
       name={name}
-      rating={rating}
       title={title}
       photo={photo}
-      intro={intro}
-      teaching={teaching}
-      forPlayers={forPlayers}
-      price={price}
-      costPer={costPer}
-      train={train}
-      comments={comments}
-      handleRequestClass={handleRequestClass}
+      commentSubmit={handleCommentSubmit}
     />
   );
 };
 
-export default TrainerPageIndex;
+export default FeedbackIndex;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { isAuthenticated, GetAuthData } from "../../context/auth";
 
@@ -9,6 +10,7 @@ import CommentBox from "../../components/comments";
 import "./styles.css";
 
 const TrainerPage = ({
+  id = "",
   name = "",
   photo = "",
   rating = "0",
@@ -22,6 +24,8 @@ const TrainerPage = ({
   comments = [],
   handleRequestClass,
 }) => {
+  const history = useHistory();
+
   const introText = intro.split("\n").map((text, idx) => {
     return (
       <span className="multiline-text" key={`intro-${idx}`}>
@@ -82,6 +86,10 @@ const TrainerPage = ({
     };
 
     handleRequestClass(data);
+  };
+
+  const handleClassEvaluate = () => {
+    history.push(`/trainer-rating/${id}`);
   };
 
   return (
@@ -181,7 +189,7 @@ const TrainerPage = ({
             <br />
             <h2>Deixe seu comentário!</h2>
 
-            <button>Avaliar treino</button>
+            <button onClick={handleClassEvaluate}>Avaliar treino</button>
           </div>
         </div>
       </div>
