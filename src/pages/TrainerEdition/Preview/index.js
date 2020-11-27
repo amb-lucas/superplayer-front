@@ -20,6 +20,22 @@ const TrainerPagePreview = ({
   const name = GetAuthData().user.name;
   const photo = GetAuthData().user.profileImage;
 
+  const introText = intro.split("\n").map((text, idx) => {
+    return (
+      <span className="multiline-text" key={`intro-${idx}`}>
+        {text}
+      </span>
+    );
+  });
+
+  const trainText = train.split("\n").map((text, idx) => {
+    return (
+      <span className="multiline-text" key={`train-${idx}`}>
+        {text}
+      </span>
+    );
+  });
+
   return (
     <div id="preview-trainer-profile">
       <button className="close-button" onClick={closePreview}>
@@ -53,7 +69,7 @@ const TrainerPagePreview = ({
         </div>
 
         <div className="trainer-simple-box">
-          <p className="trainer-summary-intro">{intro}</p>
+          <p className="trainer-summary-intro">{introText}</p>
         </div>
       </div>
 
@@ -69,7 +85,7 @@ const TrainerPagePreview = ({
         </div>
 
         <div className="trainer-simple-box">
-          <p className="trainer-summary-intro">{train}</p>
+          <p className="trainer-summary-intro">{trainText}</p>
         </div>
       </div>
 
