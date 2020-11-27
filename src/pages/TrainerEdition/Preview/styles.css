@@ -1,10 +1,246 @@
-#preview-trainer-profile {
-  z-index: 5;
+#preview-trainer-profile .close-button {
+  position: fixed;
+  border-radius: 50%;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  height: 60px;
+  width: 60px;
+
+  left: calc(max(50vw, 550px) + 550px - 60px);
+
+  border-style: solid;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+#preview-trainer-profile .close-button:hover {
+  opacity: 0.8;
 }
 
-.open {
-  display: block;
+#preview-trainer-profile .tooltiptext {
+  visibility: hidden;
+
+  padding: 12px 8px;
+
+  width: 236px;
+  font-size: 18px;
+  background-color: var(--background-tabs);
+
+  color: var(--text-active);
+  font-weight: 400;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--background-page);
+  border-radius: 6px;
+
+  letter-spacing: 0.5px;
+  line-height: 20px;
+
+  position: fixed;
+  top: 72px;
+  left: calc(max(50vw, 550px) + 500px - 280px);
+
+  z-index: 1;
 }
-.close {
-  display: none;
+#preview-trainer-profile .close-button:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#preview-trainer-profile .trainer-summary .summary-top {
+  margin-top: 32px;
+  display: flex;
+}
+
+#preview-trainer-profile .trainer-summary .summary-top img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  margin-right: 72px;
+  object-fit: cover;
+}
+
+#preview-trainer-profile .trainer-summary h1 {
+  margin-top: 32px;
+  font-size: 64px;
+  color: var(--text-active);
+}
+
+#preview-trainer-profile .trainer-summary h3 {
+  font-size: 32px;
+  color: var(--text-active);
+  margin-bottom: 56px;
+}
+
+#preview-trainer-profile .trainer-summary button {
+  padding: 8px 24px;
+  border-radius: 24px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--cta);
+
+  outline: none;
+  font-size: 32px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+#preview-trainer-profile .trainer-summary button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#preview-trainer-profile .primary-btn {
+  margin-right: 48px;
+  color: var(--text-active);
+  background-color: var(--cta);
+}
+#preview-trainer-profile .secondary-btn {
+  color: var(--cta);
+  background-color: var(--text-active);
+}
+
+#preview-trainer-profile .trainer-simple-box {
+  margin-top: 36px;
+  padding: 24px;
+  border-radius: 24px;
+  color: var(--text-active);
+  background-color: var(--background-tabs);
+}
+#preview-trainer-profile .trainer-summary-intro {
+  font-size: 22px;
+  color: var(--text-active);
+  line-height: 28px;
+}
+
+#preview-trainer-profile .multiline-text {
+  display: block;
+  margin-bottom: 12px;
+}
+#preview-trainer-profile .trainer-summary-intro .multiline-text:last-of-type {
+  margin-bottom: 0;
+}
+
+#preview-trainer-profile #class-details {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+#preview-trainer-profile .summary-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#preview-trainer-profile #class-request {
+  padding: 24px;
+  background-color: var(--background-tabs);
+
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cta);
+  border-radius: 24px;
+
+  text-align: center;
+  color: var(--text-active);
+
+  margin-bottom: 64px;
+}
+#preview-trainer-profile #class-request h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+#preview-trainer-profile #class-request h3 {
+  font-size: 24px;
+  font-weight: 400;
+
+  margin-bottom: 32px;
+}
+
+#preview-trainer-profile #class-request input {
+  border-radius: 24px;
+  border-width: 0;
+  outline: none;
+  font-size: 24px;
+
+  width: 500px;
+
+  padding: 16px 6px 16px 24px;
+  margin-bottom: 18px;
+}
+#preview-trainer-profile #class-request textarea {
+  border-radius: 24px;
+  border-width: 0;
+  outline: none;
+  font-size: 24px;
+
+  width: 500px;
+  height: 140px;
+
+  padding: 16px 6px 16px 24px;
+  margin-bottom: 18px;
+
+  font-family: Arial;
+  resize: none;
+  line-height: 32px;
+}
+
+#preview-trainer-profile #class-request button {
+  background-color: var(--cta);
+  color: var(--text-active);
+  font-weight: 700;
+  font-size: 30px;
+
+  margin-top: 18px;
+  padding: 12px 24px;
+
+  outline: none;
+  border-width: 0;
+  border-radius: 24px;
+
+  transition: 0.2s;
+}
+#preview-trainer-profile #class-request button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#preview-trainer-profile .end-of-page-cta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+#preview-trainer-profile .end-of-page-cta .white-box {
+  width: 476px;
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  background-color: var(--text-active);
+}
+#preview-trainer-profile .end-of-page-cta .white-box h2 {
+  font-size: 32px;
+}
+#preview-trainer-profile .end-of-page-cta .white-box button {
+  margin-top: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-width: 4px;
+  border-color: var(--cta);
+  border-radius: 24px;
+  border-style: solid;
+  outline: none;
+  transition: 0.2s;
+}
+#preview-trainer-profile .end-of-page-cta .white-box button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#preview-trainer-profile .end-of-page-cta .white-box:first-of-type button {
+  background-color: var(--cta);
+  color: var(--text-active);
+}
+#preview-trainer-profile .end-of-page-cta .white-box:last-of-type button {
+  color: var(--cta);
 }

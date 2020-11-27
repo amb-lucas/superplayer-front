@@ -7,7 +7,6 @@ import ClassSummaryBox from "../../../components/classSummaryBox";
 import "./styles.css";
 
 const TrainerPagePreview = ({
-  open,
   rating = "5",
   title,
   intro,
@@ -16,15 +15,21 @@ const TrainerPagePreview = ({
   price,
   costPer,
   train,
+  closePreview,
 }) => {
   const name = GetAuthData().user.name;
   const photo = GetAuthData().user.profileImage;
 
-  console.log(GetAuthData().user);
-
   return (
-    <div id="preview-trainer-profile" className={open ? "open" : "closed"}>
-      <div id="trainer-summary">
+    <div id="preview-trainer-profile">
+      <button className="close-button" onClick={closePreview}>
+        X
+        <span className="tooltiptext">
+          Clique para fechar a prévia e retornar à página de configuração
+        </span>
+      </button>
+
+      <div className="trainer-summary">
         <div className="summary-top">
           <img src={photo} alt={`${name}-profile`} />
           <div className="summary-details">
@@ -91,13 +96,13 @@ const TrainerPagePreview = ({
           ></textarea>
           <br />
 
-          <button type="submit" onClick={(e) => e}>
+          <button type="submit" disabled="disabled">
             Pedir treino
           </button>
         </form>
       </div>
 
-      <div id="end-of-page-cta">
+      <div className="end-of-page-cta">
         <div className="white-box">
           <h2>Se interessou pelo treino?</h2>
           <br />
@@ -113,7 +118,7 @@ const TrainerPagePreview = ({
           <br />
           <h2>Deixe seu comentário!</h2>
 
-          <button>Avaliar treino</button>
+          <button disabled="disabled">Avaliar treino</button>
         </div>
       </div>
     </div>

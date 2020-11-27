@@ -76,20 +76,23 @@ const TrainerEditionPage = ({
   const handleOpenPreview = () => {
     setOpenPreview(true);
   };
+  const handleClosePreview = () => {
+    setOpenPreview(false);
+  };
 
   return (
     <div id="trainer-edit-page">
       <div className="page-inside">
         {openPreview ? (
           <TrainerPreview
-            open={openPreview}
             title={trainerRoleValue}
             intro={trainerIntroValue}
             teaching={teachValue}
             forPlayers={forPlayersValue}
             price={priceValue}
-            costPer={perPrice}
+            costPer={perPriceValue}
             train={classInfoValue}
+            closePreview={handleClosePreview}
           />
         ) : (
           <form onSubmit={handleFormSubmit}>
@@ -136,7 +139,7 @@ const TrainerEditionPage = ({
                     type="text"
                     placeholder="Descomplicando o Lol"
                     onChange={(e) => handleChangeTitle(e)}
-                    defaultValue={classTitle}
+                    defaultValue={classTitleValue}
                   ></input>
                   <br />
                 </div>
@@ -151,7 +154,7 @@ const TrainerEditionPage = ({
                       type="text"
                       placeholder="League of Legends"
                       onChange={(e) => handleTeach(e)}
-                      defaultValue={teach}
+                      defaultValue={teachValue}
                     ></input>
                   </div>
 
@@ -164,7 +167,7 @@ const TrainerEditionPage = ({
                       type="text"
                       placeholder="De todos os níveis"
                       onChange={(e) => handleForPlayers(e)}
-                      defaultValue={forPlayers}
+                      defaultValue={forPlayersValue}
                     ></input>
                   </div>
                 </div>
@@ -179,7 +182,7 @@ const TrainerEditionPage = ({
                       type="number"
                       placeholder="60"
                       onChangeCapture={(e) => handlePrice(e)}
-                      defaultValue={price}
+                      defaultValue={priceValue}
                     ></input>
                   </div>
                   <div>
@@ -191,7 +194,7 @@ const TrainerEditionPage = ({
                       type="text"
                       placeholder="hora"
                       onChange={(e) => handlePerPrice(e)}
-                      defaultValue={perPrice}
+                      defaultValue={perPriceValue}
                     ></input>
                   </div>
                 </div>
@@ -204,7 +207,7 @@ const TrainerEditionPage = ({
                   type="text"
                   placeholder="Na aula vamos treinar muito"
                   onChange={(e) => handleClassInfo(e)}
-                  defaultValue={classInfo}
+                  defaultValue={classInfoValue}
                 ></textarea>
               </fieldset>
             </div>
