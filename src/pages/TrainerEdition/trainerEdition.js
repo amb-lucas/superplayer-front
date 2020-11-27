@@ -107,7 +107,7 @@ const TrainerEditionPage = ({
                   id="trainerRole"
                   required="required"
                   type="text"
-                  placeholder="Coach do LoL da UFPE Virtus"
+                  placeholder="Ex: Coach de LoL"
                   onChange={(e) => handleChangeRole(e)}
                   defaultValue={trainerRoleValue}
                 ></input>
@@ -119,7 +119,7 @@ const TrainerEditionPage = ({
                   id="trainerIntro"
                   required="required"
                   type="text"
-                  placeholder="olá, me chamo fernando"
+                  placeholder="Sobre você e sua experiência com o jogo"
                   onChange={(e) => handleChangeIntro(e)}
                   defaultValue={trainerIntroValue}
                 ></textarea>
@@ -137,7 +137,7 @@ const TrainerEditionPage = ({
                     id="classTitle"
                     required="required"
                     type="text"
-                    placeholder="Descomplicando o Lol"
+                    placeholder="Ex: Dominando Jungle"
                     onChange={(e) => handleChangeTitle(e)}
                     defaultValue={classTitleValue}
                   ></input>
@@ -152,7 +152,7 @@ const TrainerEditionPage = ({
                       id="teach"
                       required="required"
                       type="text"
-                      placeholder="League of Legends"
+                      placeholder="Nome do jogo"
                       onChange={(e) => handleTeach(e)}
                       defaultValue={teachValue}
                     ></input>
@@ -165,7 +165,7 @@ const TrainerEditionPage = ({
                       id="forPlayers"
                       required="required"
                       type="text"
-                      placeholder="De todos os níveis"
+                      placeholder="Ex: Iniciantes"
                       onChange={(e) => handleForPlayers(e)}
                       defaultValue={forPlayersValue}
                     ></input>
@@ -180,7 +180,7 @@ const TrainerEditionPage = ({
                       id="price"
                       required="required"
                       type="number"
-                      placeholder="60"
+                      placeholder="Ex: 50"
                       onChangeCapture={(e) => handlePrice(e)}
                       defaultValue={priceValue}
                     ></input>
@@ -192,7 +192,7 @@ const TrainerEditionPage = ({
                       id="pricePer"
                       required="required"
                       type="text"
-                      placeholder="hora"
+                      placeholder="Ex: sessão"
                       onChange={(e) => handlePerPrice(e)}
                       defaultValue={perPriceValue}
                     ></input>
@@ -205,7 +205,7 @@ const TrainerEditionPage = ({
                   id="classInfo"
                   required="required"
                   type="text"
-                  placeholder="Na aula vamos treinar muito"
+                  placeholder="Sobre o que você ensina e sua metodologia"
                   onChange={(e) => handleClassInfo(e)}
                   defaultValue={classInfoValue}
                 ></textarea>
