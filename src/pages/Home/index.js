@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import Tab from "../../components/tab";
 import TitleTab from "../../components/titleTab";
-import PlayerTab from "../../components/playerTab";
+import MeetTrainers from "./MeetTrainers";
 
 import JoystickIcon from "../../assets/icons/joystick.svg";
 import DoubleArrowIcon from "../../assets/icons/double-arrow.svg";
@@ -22,31 +22,6 @@ const HomePage = () => {
   const handleClickSearch = () => {
     history.push(`/search?term=${searchInput}`);
   };
-
-  const eTrainersSamples = [
-    {
-      name: "Yodami",
-      photo: process.env.PUBLIC_URL + "/sample-images/yodami.png",
-      description: `Olá! Sou Luís Augusto, também conhecido como Yodami.\n
-      Jogo League of Legends desde 2013 e tenho 6 anos de experiência jogando competitivamente como Jungle, com main Amumu.\n
-      É uma das posições mais complicadas, mas vou lhe ensinar quando gankar, que rotas fazer, como evitar armadilhas e o que se deve ter na build de um Jungle...`,
-    },
-    {
-      name: "Zilde Souto",
-      photo: process.env.PUBLIC_URL + "/sample-images/zilde.png",
-      description: `Sou Zilde e faço parte do time de League of Legends da UFPE Virtus desde 2017.\n
-      Jogo League of Legends competitivamente desde 2015 como Jungle. Meu main é Rek'Sai e sou atualmente o top 1 BR com o campeão.\n
-      Vou lhe ensinar quais skills se deve procurar para ser um bom jungle e como identificar as oportunidades para gankar uma lane.`,
-    },
-    {
-      name: "ToBK",
-      photo: process.env.PUBLIC_URL + "/sample-images/tobk.png",
-      description: `Jogo pelo nome de ToBK e sou o mid titular do time da UFPE Virtus.\n
-      Estou nessa posição há 5 anos e jogo principalmente com a Katarina.\n
-      Sou bem extrovertido e analítica, o que se reflete nos meus treinos.\n
-      Você terá acesso a todo conhecimento necessário para saber o que fazer em cada momento do jogo e poderemos focar no ponto mais importante: Prática.`,
-    },
-  ];
 
   return (
     <div className="head">
@@ -69,21 +44,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div id="meet-the-trainers">
-          <TitleTab title="Conheça os eTrainers" />
-
-          {eTrainersSamples.map(({ name, photo, description }, i) => {
-            return (
-              <PlayerTab
-                key={`eTrainer-${i}`}
-                name={name}
-                photo={photo}
-                photoPosition={i % 2 === 0 ? "left" : "right"}
-                description={description}
-              />
-            );
-          })}
-        </div>
+        <MeetTrainers />
 
         <div id="who-are-we">
           <TitleTab title="Quem somos?" />

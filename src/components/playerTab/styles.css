@@ -10,6 +10,7 @@
 .player-tab-cell {
   color: var(--text-active);
   display: inline-block;
+  width: 740px;
 }
 
 .player-tab-cell span {
@@ -20,7 +21,10 @@
 .player-tab-cell h1 {
   font-size: 36px;
   font-weight: 400;
-  padding-bottom: 12px;
+  padding-bottom: 4px;
+}
+.player-tab-cell h2 {
+  padding-bottom: 16px;
 }
 
 .player-tab-cell p {
@@ -29,7 +33,7 @@
   font-weight: 300;
 }
 
-.player-tab-cell img {
+.player-tab-image img {
   border-radius: 50%;
   height: 264px;
   width: 264px;
