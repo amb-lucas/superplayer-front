@@ -6,11 +6,13 @@ import { isAuthenticated, useAuth } from "../../context/auth";
 
 import LoginPage from "./login";
 
-const LoginIndex = () => {
+const LoginIndex = (props) => {
   const { login } = useAuth();
   const history = useHistory();
 
   const [loading, setLoading] = useState(false);
+
+  const referer = props?.location?.state?.referer || "/";
 
   const handleLoginSubmit = async (data) => {
     setLoading(true);
@@ -20,7 +22,7 @@ const LoginIndex = () => {
         if (res.status === 200) {
           login(res.data);
           setLoading(false);
-          history.push("/");
+          history.push(referer);
         }
       });
     } catch (err) {
@@ -34,7 +36,7 @@ const LoginIndex = () => {
   };
 
   return isAuthenticated() ? (
-    <Redirect to="/" />
+    <Redirect to={referer} />
   ) : (
     <LoginPage handleLoginSubmit={handleLoginSubmit} loading={loading} />
   );
