@@ -15,6 +15,7 @@ import RegisterPageIndex from "./pages/Register";
 import LoginPageIndex from "./pages/Login";
 import TrainerEditionIndex from "./pages/TrainerEdition";
 import FeedbackPageIndex from "./pages/Feedback";
+import InterestedListIndex from "./pages/InterestedList";
 
 const Routes = () => {
   return (
@@ -28,6 +29,10 @@ const Routes = () => {
           <PrivateRoute
             path="/trainer-rating/:id"
             component={FeedbackPageIndex}
+          />
+          <PrivateRoute
+            path="/requested-list"
+            component={InterestedListIndex}
           />
           <PrivateRoute path="/trainer-edit" component={TrainerEditionIndex} />
           <Route path="/search" component={SearchPageIndex} />

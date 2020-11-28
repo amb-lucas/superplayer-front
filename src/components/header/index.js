@@ -40,6 +40,12 @@ const Header = () => {
                 </Link>
               )}
 
+              {GetAuthData().user.trainer && (
+                <Link to="/requested-list">
+                  <div className="dropdown-item">Lista de requisições</div>
+                </Link>
+              )}
+
               <div className="dropdown-item" onClick={handleLogout}>
                 Logout
               </div>

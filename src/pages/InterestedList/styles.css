@@ -1,0 +1,35 @@
+#interested-list-page h2 {
+  color: var(--text-active);
+  padding-top: 36px;
+  font-size: 36px;
+  padding-bottom: 24px;
+}
+
+#interested-list-page #interested-list {
+  width: 100%;
+  background-color: var(--background-tabs);
+  padding: 6px 6px;
+  border-radius: 24px;
+  border-spacing: 24px 16px;
+  color: var(--text-inactive);
+}
+
+#interested-list-page #interested-list thead {
+  color: var(--text-active);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#interested-list-page #interested-list tbody {
+  font-size: 20px;
+}
+#interested-list-page #interested-list tbody tr:hover {
+  color: var(--text-active);
+  cursor: pointer;
+}
+
+#interested-list-page h3 {
+  color: var(--text-inactive);
+  margin-top: 32px;
+  font-size: 32px;
+}
