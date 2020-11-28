@@ -20,13 +20,13 @@
   margin-bottom: 72px;
 }
 
-.loader {
-  margin: 0 auto;
-  border: 16px solid var(--text-active);
-  border-top: 16px solid var(--cta);
+#search-results .loader {
+  margin: 48px auto;
+  border: 24px solid var(--text-active);
+  border-top: 24px solid var(--cta);
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   animation: spin 2s linear infinite;
 }
 .no-trainer-found {
