@@ -6,6 +6,8 @@
   width: 400px;
   height: 400px;
 
+  margin: 0 auto;
+
   border: 32px solid var(--text-active);
   border-top: 32px solid var(--cta);
   border-radius: 50%;
