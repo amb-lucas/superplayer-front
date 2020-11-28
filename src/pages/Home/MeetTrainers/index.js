@@ -20,7 +20,7 @@ const MeetTrainersIndex = () => {
                 title: trainer.role,
                 photo: trainer.profileImage,
                 description: trainer.about,
-                id: trainer._id,
+                id: trainer.user,
               };
             })
           );

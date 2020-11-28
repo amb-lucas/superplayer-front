@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Tab from "../tab";
 
@@ -9,6 +10,7 @@ const PlayerTab = ({
   photo,
   title,
   description,
+  trainerId,
   photoPosition = "left",
 }) => {
   const descriptionHTML = description.split("\n").map((item, idx) => {
@@ -30,6 +32,11 @@ const PlayerTab = ({
         alt={`${name} profile`}
         className={photoPosition === "left" ? "left-img" : "right-img"}
       />
+
+      <br />
+      <Link to={`trainer/${trainerId}`} className="photo-cell-link">
+        {"> "}Saiba mais
+      </Link>
     </div>
   );
 

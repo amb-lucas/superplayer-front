@@ -38,7 +38,16 @@
   height: 264px;
   width: 264px;
   object-fit: cover;
+  margin-bottom: 8px;
 }
+.player-tab-image .photo-cell-link {
+  color: var(--text-inactive);
+  font-size: 22px;
+}
+.player-tab-image .photo-cell-link:hover {
+  color: var(--text-active);
+}
+
 .player-tab-cell .right-img {
   margin-left: 24px;
 }
