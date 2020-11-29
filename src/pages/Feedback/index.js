@@ -43,7 +43,9 @@ const FeedbackIndex = (props) => {
     } catch (err) {
       if (err.response && err.response.status === 400) {
         if (err.response.data.signal === 1) {
-          alert("Erro: Você não requisitou treinos com esse treinador.");
+          alert(
+            "Erro: Não foram encontrados treinos seus concluídos com esse treinador."
+          );
         } else {
           alert("Erro: Você não pode se avaliar.");
         }
