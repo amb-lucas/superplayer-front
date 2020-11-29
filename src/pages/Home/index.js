@@ -40,7 +40,8 @@ const HomePage = () => {
 
           <div className="join-us">
             <p>Joga competitivamente?</p>
-            <Link to="/">{">"} Junte-se a nós!</Link>
+
+            <Link to="/trainer-edit">{">"} Junte-se a nós!</Link>
           </div>
         </div>
 
