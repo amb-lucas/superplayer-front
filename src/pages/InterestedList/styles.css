@@ -33,7 +33,7 @@
 }
 
 #interested-list-page #interested-list tr td {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 #interested-list-page #interested-list tr td:first-of-type {
