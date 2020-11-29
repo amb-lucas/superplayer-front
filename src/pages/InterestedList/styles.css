@@ -46,9 +46,6 @@
   width: 400px;
 }
 #interested-list-page #interested-list tr td:last-of-type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 160px;
 }
 
