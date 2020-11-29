@@ -28,10 +28,44 @@ const InterestedListIndex = () => {
     makeQuery();
   }, [history]);
 
+  const handleMarkAsComplete = async (id) => {
+    setQueryResponse(
+      queryResponse.filter((request) => request.id_request !== id)
+    );
+
+    try {
+      await Api.put(`/trainer/request/${id}`, {
+        status: "DONE",
+      });
+    } catch (err) {
+      alert("Erro no servidor, tente novamente mais tarde.");
+      history.push("/");
+    }
+  };
+
+  const handleDiscard = async (id) => {
+    setQueryResponse(
+      queryResponse.filter((request) => request.id_request !== id)
+    );
+
+    try {
+      await Api.put(`/trainer/request/${id}`, {
+        status: "REJECTED",
+      });
+    } catch (err) {
+      alert("Erro no servidor, tente novamente mais tarde.");
+      history.push("/");
+    }
+  };
+
   return loading ? (
     <LoadingPage />
   ) : (
-    <InterestedList contacts={queryResponse} />
+    <InterestedList
+      contacts={queryResponse}
+      markAsComplete={handleMarkAsComplete}
+      discard={handleDiscard}
+    />
   );
 };
 

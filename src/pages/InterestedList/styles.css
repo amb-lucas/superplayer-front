@@ -10,8 +10,13 @@
   background-color: var(--background-tabs);
   padding: 6px 6px;
   border-radius: 24px;
-  border-spacing: 24px 16px;
   color: var(--text-inactive);
+}
+#interested-list-page #interested-list tr td {
+  padding: 12px 16px;
+}
+#interested-list-page #interested-list tbody tr:last-of-type td {
+  padding-bottom: 18px;
 }
 
 #interested-list-page #interested-list thead {
@@ -25,6 +30,55 @@
 }
 #interested-list-page #interested-list tbody tr:hover {
   color: var(--text-active);
+}
+
+#interested-list-page #interested-list tr td {
+  word-break: break-all;
+}
+
+#interested-list-page #interested-list tr td:first-of-type {
+  width: 220px;
+}
+#interested-list-page #interested-list tr td:nth-of-type(2) {
+  width: 220px;
+}
+#interested-list-page #interested-list tr td:nth-of-type(3) {
+  width: 400px;
+}
+#interested-list-page #interested-list tr td:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+}
+
+#interested-list-page #interested-list tbody tr td button {
+  visibility: hidden;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 18px;
+  font-size: 24px;
+  height: 36px;
+  border-width: 0;
+
+  color: var(--text-active);
+  font-weight: 700;
+
+  width: 150px;
+}
+#interested-list-page #interested-list tbody tr:hover td button {
+  visibility: visible;
+}
+#interested-list-page #interested-list tbody tr td button:first-of-type {
+  background-color: var(--cta);
+  margin-bottom: 8px;
+}
+#interested-list-page #interested-list tbody tr td button:last-of-type {
+  background-color: #ff3333;
+}
+#interested-list-page #interested-list tbody tr:hover td button:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 
