@@ -131,7 +131,7 @@ const TrainerEditionPage = ({
                 <legend>Sobre seu treino</legend>
 
                 <div className="class-title-field">
-                  <label htmlFor="classTitle">Título da aula</label>
+                  <label htmlFor="classTitle">Título do treino</label>
                   <br />
                   <input
                     id="classTitle"
@@ -199,7 +199,7 @@ const TrainerEditionPage = ({
                   </div>
                 </div>
 
-                <label htmlFor="classInfo">Metodologia da aula</label>
+                <label htmlFor="classInfo">Metodologia do treino</label>
                 <br />
                 <textarea
                   id="classInfo"
