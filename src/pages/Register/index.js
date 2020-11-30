@@ -11,7 +11,7 @@ const RegisterIndex = () => {
   const history = useHistory();
 
   const handleRegister = async ({ name, email, password, profileImage }) => {
-    const image = profileImage ? await ReadFileAsync(profileImage) : null;
+    const image = profileImage ? await ReadFileAsync(profileImage) : undefined;
 
     const formData = {
       name,
