@@ -18,42 +18,41 @@ const SearchIndex = (props) => {
     trainers: [],
   });
 
-  const makeQuery = async (query) => {
-    setQueryLoading(true);
-    history.push(`/search?term=${query}`);
-
-    Api.get("search", {
-      params: { term: query },
-    }).then((res) => {
-      const responseData = res.data.searchAns;
-      setQueryLoading(false);
-      setQueryResponse({
-        total: responseData.length,
-        trainers: responseData.map(
-          ({ name, role, profileImage, classTitle, user }) => {
-            return {
-              name,
-              role,
-              photo: profileImage,
-              classTitle,
-              id: user,
-            };
-          }
-        ),
-      });
-    });
-  };
-
   const history = useHistory();
   const handleNewQuery = (query) => {
     setQueryValue(query);
     history.push(`/search?term=${query}`);
-    makeQuery(query);
   };
 
   useEffect(() => {
+    const makeQuery = async (query) => {
+      setQueryLoading(true);
+      history.push(`/search?term=${query}`);
+
+      Api.get("search", {
+        params: { term: query },
+      }).then((res) => {
+        const responseData = res.data.searchAns;
+        setQueryLoading(false);
+        setQueryResponse({
+          total: responseData.length,
+          trainers: responseData.map(
+            ({ name, role, profileImage, classTitle, user }) => {
+              return {
+                name,
+                role,
+                photo: profileImage,
+                classTitle,
+                id: user,
+              };
+            }
+          ),
+        });
+      });
+    };
+
     makeQuery(queryValue);
-  }, []);
+  }, [queryValue, history]);
 
   return (
     <SearchPage
